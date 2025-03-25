@@ -1,0 +1,171 @@
+/* Global Styling for Contact Page */
+.contact-page {
+  font-family: 'Roboto', Arial, sans-serif;
+  color: #333;
+  background-color: #f9f9f9;
+  padding: 30px 20px;           /* Increased padding to fill space */
+  max-width: 1000px;            /* Wider container to reduce vacant space */
+  margin: 20px auto;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  line-height: 1.8;
+  opacity: 0;
+  animation: fadeIn 0.8s forwards;
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
+}
+
+.contact-page__header h2 {
+  text-align: center;
+  font-size: 2.2rem;            /* Larger header for better emphasis */
+  color: #004085;
+  margin-bottom: 30px;
+  text-transform: uppercase;
+}
+
+/* Fade-In Up Animation */
+.fade-in-up {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 0.8s forwards;
+}
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Form Styling */
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;                    /* Increased gap between fields */
+  margin-bottom: 30px;
+}
+.form-group {
+  display: flex;
+  flex-direction: column;
+}
+label {
+  font-weight: bold;
+  color: #004085;
+  margin-bottom: 8px;           /* Slightly larger spacing */
+}
+input,
+textarea {
+  padding: 12px;                /* Increased padding for easier input */
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 1rem;
+  background-color: #fff;
+  color: #333;
+  transition: border-color 0.3s;
+  width: 100%;
+  box-sizing: border-box;
+}
+input:focus,
+textarea:focus {
+  border-color: #004085;
+  outline: none;
+}
+textarea {
+  resize: vertical;
+  min-height: 120px;            /* Increased height for better usability */
+}
+
+/* Submit Button */
+.btn.submit-btn {
+  padding: 14px 20px;           /* Larger button for prominence */
+  background-color: #004085;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  font-size: 1.1rem;            /* Slightly larger font */
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.3s;
+  align-self: center;           /* Center the button */
+}
+.btn.submit-btn:hover {
+  background-color: #ffc107;
+  color: #000;
+  transform: translateY(-2px);
+}
+
+/* Success Message */
+.success-message {
+  font-size: 1rem;
+  color: #28a745;
+  text-align: center;
+  margin-bottom: 20px;
+  opacity: 0;
+  animation: fadeIn 0.5s forwards;
+}
+
+/* Contact Details Section */
+.contact-details-section {
+  margin-top: 30px;             /* Increased margin to separate sections */
+  padding: 30px;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+.contact-details {
+  margin-bottom: 20px;
+}
+.contact-details h3 {
+  font-size: 1.6rem;            /* Increased header size */
+  color: #004085;
+  margin-bottom: 10px;
+}
+.contact-details p {
+  font-size: 1rem;
+  color: #555;
+  margin-bottom: 20px;
+}
+
+/* Map Embed Styling */
+.map-container {
+  margin-bottom: 20px;
+  border-radius: 5px;
+  overflow: hidden;
+  transition: transform 0.3s ease;
+}
+.map-container:hover {
+  transform: scale(1.02);
+}
+
+/* Social Media Links */
+.social-media {
+  text-align: center;
+  margin-top: 20px;             /* Increased top margin */
+}
+.social-media a {
+  margin: 0 12px;              /* Slightly increased spacing */
+  text-decoration: none;
+  color: #004085;
+  font-size: 1.6rem;           /* Increased icon size */
+  font-weight: bold;
+  transition: color 0.3s;
+}
+.social-media a:hover {
+  color: #ffc107;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .contact-page {
+    padding: 20px;
+  }
+  .contact-page__header h2 {
+    font-size: 1.8rem;
+  }
+  .contact-details h3 {
+    font-size: 1.4rem;
+  }
+}

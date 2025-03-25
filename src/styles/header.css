@@ -1,0 +1,365 @@
+/* =========================================
+   Masterpiece Header CSS for School Website
+   ========================================= */
+
+:root {
+  --primary-color: #002b5c;
+  --secondary-color: #f4a261;
+  --text-color: #ffffff;
+  --transition-speed: 0.3s;
+  --dark-gray: #333;
+  --hover-scale: 1.05;
+  --shadow-light: rgba(0, 0, 0, 0.1);
+  --shadow-heavy: rgba(0, 0, 0, 0.15);
+}
+
+/* =========================================
+   Keyframes for Subtle Animations
+   ========================================= */
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* =========================================
+   Skip to Content Link (Accessibility)
+   ========================================= */
+.skip-to-content {
+  position: absolute;
+  top: -40px;
+  left: 0;
+  background: var(--text-color);
+  color: var(--primary-color);
+  padding: 5px 10px;
+  border-radius: 4px;
+  z-index: 9999;
+  text-decoration: none;
+  font-weight: bold;
+  transition: top var(--transition-speed);
+}
+.skip-to-content:focus {
+  top: 10px;
+  outline: 2px solid var(--secondary-color);
+}
+
+/* =========================================
+   Top Bar
+   ========================================= */
+.header__top-bar {
+  background-color: var(--secondary-color);
+  color: var(--primary-color);
+  padding: 6px 15px;
+  text-align: center;
+  animation: fadeInDown var(--transition-speed) ease-out;
+}
+
+.header__top-bar-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.header__top-bar-left,
+.header__top-bar-right {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.header__top-bar-item {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.header__top-bar-icon {
+  font-size: 0.85rem;
+}
+
+.header__top-bar-item a {
+  color: var(--primary-color);
+  text-decoration: none;
+  transition: color var(--transition-speed);
+}
+.header__top-bar-item a:hover {
+  color: #ffdd00;
+}
+
+/* Language Switcher */
+.header__language-switcher select {
+  background-color: var(--primary-color);
+  color: var(--text-color);
+  border: 1px solid var(--secondary-color);
+  padding: 4px 8px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 0.9rem;
+}
+.header__language-switcher select:focus {
+  outline: none;
+  box-shadow: 0 0 4px var(--secondary-color);
+}
+
+/* =========================================
+   Main Header
+   ========================================= */
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 999;
+  background-color: var(--primary-color);
+  color: var(--text-color);
+  padding: 10px 20px;
+  transition: background-color var(--transition-speed), box-shadow var(--transition-speed);
+  animation: fadeInDown var(--transition-speed) ease-out;
+}
+
+.header--scrolled {
+  box-shadow: 0 2px 6px var(--shadow-heavy);
+}
+
+.header__container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* =========================================
+   Logo and Title
+   ========================================= */
+.header__logo {
+  display: flex;
+  align-items: center;
+  animation: fadeInDown var(--transition-speed) ease-out;
+}
+
+.header__logo-image {
+  width: 40px;
+  height: auto;
+  margin-right: 8px;
+}
+
+.header__title {
+  font-size: 1.4rem;
+  font-family: 'Roboto', Arial, sans-serif;
+  font-weight: 600;
+  color: var(--secondary-color);
+  letter-spacing: 0.5px;
+  transition: color var(--transition-speed), transform var(--transition-speed);
+}
+
+.header__title:hover {
+  color: #ffdd00;
+  transform: scale(var(--hover-scale));
+}
+
+/* =========================================
+   Mobile Menu Toggle
+   ========================================= */
+.header__mobile-toggle {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 6px;
+}
+
+.header__hamburger {
+  width: 24px;
+  height: 2px;
+  background-color: var(--text-color);
+  display: block;
+  position: relative;
+  transition: transform var(--transition-speed);
+}
+.header__hamburger::before,
+.header__hamburger::after {
+  content: '';
+  width: 24px;
+  height: 2px;
+  background-color: var(--text-color);
+  display: block;
+  position: absolute;
+  left: 0;
+  transition: transform var(--transition-speed);
+}
+.header__hamburger::before {
+  top: -8px;
+}
+.header__hamburger::after {
+  top: 8px;
+}
+
+.header__mobile-toggle--active .header__hamburger {
+  background-color: transparent;
+}
+.header__mobile-toggle--active .header__hamburger::before {
+  transform: translateY(8px) rotate(45deg);
+}
+.header__mobile-toggle--active .header__hamburger::after {
+  transform: translateY(-8px) rotate(-45deg);
+}
+
+/* =========================================
+   Navigation
+   ========================================= */
+.header__nav {
+  display: flex;
+  align-items: center;
+}
+
+.header__nav-list {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  padding: 0;
+  margin: 0;
+  animation: fadeInDown var(--transition-speed) ease-out;
+}
+
+.header__nav-link {
+  text-decoration: none;
+  color: var(--text-color);
+  font-size: 0.9rem;
+  padding: 6px 8px;
+  font-weight: 500;
+  border-radius: 4px;
+  transition: background-color var(--transition-speed), color var(--transition-speed), transform var(--transition-speed);
+}
+
+.header__nav-link:hover,
+.header__nav-link:focus {
+  background-color: var(--secondary-color);
+  color: var(--primary-color);
+  transform: scale(var(--hover-scale));
+}
+
+/* CTA Link */
+.header__nav-item--cta .header__nav-link--cta {
+  /* New: Subtle Gradient for CTA */
+  background: linear-gradient(90deg, #ffd658, var(--secondary-color));
+  color: var(--primary-color);
+  font-size: 0.95rem;
+  padding: 7px 12px;
+  font-weight: 600;
+  border-radius: 4px;
+  transition: background-color var(--transition-speed), transform var(--transition-speed);
+}
+
+.header__nav-item--cta .header__nav-link--cta:hover {
+  background: linear-gradient(90deg, #ffe57f, #ffd658);
+  transform: scale(var(--hover-scale));
+}
+
+/* =========================================
+   Search Icon & Form
+   ========================================= */
+.header__search-icon {
+  color: var(--text-color);
+  font-size: 1.1rem;
+  margin-right: 10px;
+  cursor: pointer;
+  transition: transform var(--transition-speed);
+}
+.header__search-icon:hover {
+  transform: scale(1.2);
+}
+
+.header__search-form {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  animation: fadeInDown var(--transition-speed) ease-out;
+}
+
+.header__search-form input {
+  padding: 8px 12px;
+  border-radius: 4px;
+  border: 1px solid var(--secondary-color);
+  background-color: #ffffff;
+  color: var(--primary-color);
+  font-size: 0.95rem;
+  outline: none;
+  transition: border-color var(--transition-speed), box-shadow var(--transition-speed);
+}
+
+.header__search-form input::placeholder {
+  color: var(--dark-gray);
+  opacity: 0.8;
+}
+
+.header__search-form input:focus {
+  border-color: var(--primary-color);
+  box-shadow: 0 0 5px rgba(0, 43, 92, 0.3);
+}
+
+.header__search-form button {
+  background-color: var(--secondary-color);
+  color: var(--primary-color);
+  border: none;
+  padding: 8px 14px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  transition: background-color var(--transition-speed), transform var(--transition-speed);
+}
+.header__search-form button:hover {
+  background-color: #ffd658;
+  transform: translateY(-2px);
+}
+
+/* =========================================
+   Responsive Mobile Styles
+   ========================================= */
+@media (max-width: 900px) {
+  .header__mobile-toggle {
+    display: block;
+  }
+
+  .header__nav {
+    position: absolute;
+    top: 70px; /* or adjust based on your header height */
+    left: 0;
+    right: 0;
+    background-color: var(--primary-color);
+    flex-direction: column;
+    align-items: flex-start;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height var(--transition-speed) ease-out;
+  }
+  .header__nav--active {
+    max-height: 300px; /* approximate height to show items */
+  }
+
+  .header__nav-list {
+    flex-direction: column;
+    gap: 0;
+    width: 100%;
+  }
+  .header__nav-item {
+    width: 100%;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  }
+  .header__nav-link {
+    display: block;
+    width: 100%;
+    padding: 12px 16px;
+  }
+
+  .header__search-icon {
+    margin-right: 0;
+  }
+}
