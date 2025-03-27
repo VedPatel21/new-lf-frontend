@@ -24,10 +24,10 @@ const Loader = () => (
 
 function App() {
   return (
-    <Router>
+    // Add basename so that all routes are relative to "/new-lf-frontend"
+    <Router basename="/new-lf-frontend">
       <div className="app-container">
         <Header />
-        {/* Suspense with custom loader fallback */}
         <Suspense fallback={<Loader />}>
           <main>
             <Routes>
